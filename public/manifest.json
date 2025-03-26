@@ -1,0 +1,9 @@
+{
+  "short_name": "CPU Scheduler",
+  "name": "Energy-Efficient CPU Scheduler",
+
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#1a1a1a"
+} 
