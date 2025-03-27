@@ -3,18 +3,22 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { ScheduleResult } from '../types';
+
+const BASE_POWER_CONSUMPTION = 1; // Define the base power consumption
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
@@ -38,12 +42,13 @@ const EnergyGraph: React.FC<EnergyGraphProps> = ({ scheduleResult }) => {
       },
       title: {
         display: true,
-        text: 'Process Energy Consumption',
+        text: 'Energy Consumption Over Time',
         color: '#05d9e8',
       },
     },
     scales: {
       y: {
+        beginAtZero: true,
         title: {
           display: true,
           text: 'Energy (Watts)',
@@ -59,7 +64,7 @@ const EnergyGraph: React.FC<EnergyGraphProps> = ({ scheduleResult }) => {
       x: {
         title: {
           display: true,
-          text: 'Process',
+          text: 'Time',
           color: '#05d9e8'
         },
         grid: {
@@ -73,13 +78,24 @@ const EnergyGraph: React.FC<EnergyGraphProps> = ({ scheduleResult }) => {
   };
 
   const data = {
-    labels: scheduleResult.timeline.map(t => t.process.name),
+    labels: scheduleResult.timeline.map((_, index) => `T${index}`),
     datasets: [
       {
-        label: 'Energy Consumption',
-        data: scheduleResult.timeline.map(t => t.process.energyConsumption * t.process.burstTime),
+        label: 'Ideal Energy',
+        data: scheduleResult.timeline.map(t => 
+          BASE_POWER_CONSUMPTION * (t.endTime - t.startTime)
+        ),
         backgroundColor: '#ff2a6d',
         borderColor: '#05d9e8',
+        borderWidth: 1,
+      },
+      {
+        label: 'Optimized Energy',
+        data: scheduleResult.timeline.map(t => 
+          t.powerConsumption
+        ),
+        backgroundColor: '#4a90e2',
+        borderColor: '#2ecc71',
         borderWidth: 1,
       }
     ]
@@ -87,9 +103,9 @@ const EnergyGraph: React.FC<EnergyGraphProps> = ({ scheduleResult }) => {
 
   return (
     <div className="bg-cyber-black/50 p-6 rounded-lg border border-cyber-purple shadow-neon">
-      <Bar options={options} data={data} />
+      <Line options={options} data={data} />
     </div>
   );
 };
 
-export default EnergyGraph; 
+export default EnergyGraph;

@@ -1,0 +1,45 @@
+.timeline-chart {
+  position: relative;
+  height: 100px;
+  background: #1a1a1a;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.timeline-entry {
+  position: absolute;
+  height: 30px;
+  background: #4a90e2;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.metrics {
+  margin: 20px 0;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.energy-comparison {
+  margin: 20px 0;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.results h2 {
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+.results h3 {
+  color: #4a90e2;
+  margin-bottom: 15px;
+}
