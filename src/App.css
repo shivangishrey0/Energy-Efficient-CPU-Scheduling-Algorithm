@@ -1,45 +1,51 @@
+/* Styles for the timeline chart container */
 .timeline-chart {
-  position: relative;
-  height: 100px;
-  background: #1a1a1a;
-  margin: 20px 0;
-  border-radius: 4px;
+  position: relative; /* Allows positioning of child elements */
+  height: 100px; /* Fixed height for the timeline chart */
+  background: #1a1a1a; /* Dark background color */
+  margin: 20px 0; /* Vertical spacing */
+  border-radius: 4px; /* Rounded corners */
 }
 
+/* Styles for individual timeline entries */
 .timeline-entry {
-  position: absolute;
-  height: 30px;
-  background: #4a90e2;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute; /* Positioned relative to the timeline-chart container */
+  height: 30px; /* Fixed height for each entry */
+  background: #4a90e2; /* Blue background color */
+  border-radius: 2px; /* Slightly rounded corners */
+  display: flex; /* Flexbox for centering content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  color: white; /* White text color */
+  font-size: 12px; /* Small font size */
+  top: 50%; /* Vertically center the entry in the timeline */
+  transform: translateY(-50%); /* Adjust for exact centering */
 }
 
+/* Styles for the metrics section */
 .metrics {
-  margin: 20px 0;
-  padding: 20px;
-  background: #1a1a1a;
-  border-radius: 4px;
+  margin: 20px 0; /* Vertical spacing */
+  padding: 20px; /* Inner spacing */
+  background: #1a1a1a; /* Dark background color */
+  border-radius: 4px; /* Rounded corners */
 }
 
+/* Styles for the energy comparison section */
 .energy-comparison {
-  margin: 20px 0;
-  padding: 20px;
-  background: #1a1a1a;
-  border-radius: 4px;
+  margin: 20px 0; /* Vertical spacing */
+  padding: 20px; /* Inner spacing */
+  background: #1a1a1a; /* Dark background color */
+  border-radius: 4px; /* Rounded corners */
 }
 
+/* Styles for the main results section headings */
 .results h2 {
-  color: #4a90e2;
-  margin-bottom: 20px;
+  color: #4a90e2; /* Blue text color */
+  margin-bottom: 20px; /* Spacing below the heading */
 }
 
+/* Styles for subheadings in the results section */
 .results h3 {
-  color: #4a90e2;
-  margin-bottom: 15px;
+  color: #4a90e2; /* Blue text color */
+  margin-bottom: 15px; /* Spacing below the subheading */
 }
