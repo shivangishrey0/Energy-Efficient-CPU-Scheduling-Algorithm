@@ -8,7 +8,7 @@ export interface Process {
   completionTime?: number;
   firstExecutionTime?: number;
 }
-
+//
 export interface TimelineEntry {
   process: Process;
   startTime: number;
